@@ -36,13 +36,9 @@ class AlarmClock:
             
             
 def my_time():
-        time = datetime.now().strftime('%H:%M:%S')
-        return time
+        timer = datetime.now().strftime('%H:%M:%S')
+        return timer
 
 
-def update_time():
-    while True:
-        my_time()
-        time.sleep(1)
         
     
