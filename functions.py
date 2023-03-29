@@ -25,17 +25,24 @@ class AlarmClock:
         # print(self.time)
         var = self.time
         if time_str in var:
+            print()
             print("Wake up!")
             frequency = 2500  # Set Frequency To 2500 Hertz
             duration = 1000  # Set Duration To 1000 ms == 1 second
             winsound.Beep(frequency, duration)
+            return False
         else:
             time.sleep(1)
+            
+            
+def my_time():
+        time = datetime.now().strftime('%H:%M:%S')
+        return time
 
 
-time_string = input('Enter the time for the alarm in %H:%M:%S format')
-while True:
-    my_alarm = AlarmClock(time_string)
-    print(my_alarm.time, end='')
-    my_alarm.sound_alarm()
-    print(end='\r')
+def update_time():
+    while True:
+        my_time()
+        time.sleep(1)
+        
+    
