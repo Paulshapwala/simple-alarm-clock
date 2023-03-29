@@ -1,6 +1,5 @@
 from datetime import datetime
 import time
-import tkinter as tk
 import winsound
 
 class AlarmClock:
@@ -45,10 +44,3 @@ class AlarmClock:
             print(end='\r')
             
             
-def my_time():
-        timer = datetime.now().strftime('%H:%M:%S')
-        return timer
-
-
-        
-    
