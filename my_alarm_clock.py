@@ -26,10 +26,10 @@ entry.pack(padx=20, pady=20)
 
 def set_alarm():
     time_str = entry.get()
-    fc.AlarmClock.start_alarm(time_str)
+    t = threading.Thread(target=fc.AlarmClock.start_alarm, args=(time_str,), daemon=True)
+    t.start()
     
 button = tk.Button(frame, font=("Arial", 30), text="Set Alarm", command=set_alarm)
 button.pack(padx=20, pady=20)
 
 win.mainloop()
-    
