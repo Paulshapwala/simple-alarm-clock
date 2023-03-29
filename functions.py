@@ -3,7 +3,6 @@ import time
 import tkinter as tk
 import winsound
 
-
 class AlarmClock:
     def __init__(self, time_string):
         time_object = datetime.now()
@@ -33,6 +32,17 @@ class AlarmClock:
             return False
         else:
             time.sleep(1)
+    @staticmethod   
+    def start_alarm(time_string):
+        status = True
+        while True:
+            my_alarm = AlarmClock(time_string)
+            print(my_alarm.time, end='')
+            status = my_alarm.sound_alarm()
+            print(end='\r')
+            if status is False:
+                break
+            print(end='\r')
             
             
 def my_time():
